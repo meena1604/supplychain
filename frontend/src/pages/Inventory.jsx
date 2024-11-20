@@ -13,13 +13,9 @@ const Inventory = () => {
     { id: 5, name: 'Product E', category: 'Category 2', stock: 5 },
     // Add more items as needed
   ];
-
-  // Filtered inventory based on search term
   const filteredItems = inventoryItems.filter(item =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  // Function to get stock status based on quantity
   const getStockStatus = (stock) => {
     if (stock > 100) return { text: 'In Stock', color: 'bg-green-500' };
     if (stock > 20) return { text: 'Low Stock', color: 'bg-yellow-500' };
